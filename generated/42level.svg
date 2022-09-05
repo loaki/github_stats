@@ -16,7 +16,6 @@ svg {
   width: calc(100% - 10px);
   height: calc(100% - 10px);
   fill: url(#img1);
-  background-image: url(red.jpg);
   stroke: rgb(225, 228, 232);
   stroke-width: 1px;
   rx: 6px;
@@ -106,11 +105,11 @@ div.ellipsis {
 <foreignObject x="21" y="17" width="318" height="176">
 <div xmlns="http://www.w3.org/1999/xhtml" class="ellipsis">
 
-<h2>Level 10 - 21%</h2>
+<h2>Level 10 - 71%</h2>
 
 <div>
 <span class="progress">
-<span style="background-color: #4180db;width: 21.000000000000085%;" class="progress-item"></span>
+<span style="background-color: #4180db;width: 71.00000000000009%;" class="progress-item"></span>
 </span>
 </div>
 
