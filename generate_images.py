@@ -100,7 +100,7 @@ async def get_42badge() -> None:
     open('generated/42badge.svg', 'wb').write(r.content)
     
     with open("templates/42badge.svg", "r") as f:
-    output = f.read()
+        output = f.read()
     lvl = 10.71
     delay_between = 150
     color = "#4180db"
