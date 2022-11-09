@@ -97,7 +97,8 @@ async def get_42badge() -> None:
     """
     url = 'https://badge42.vercel.app/api/v2/cl3vp66tw002509l1p3inopdr/stats?cursusId=21&coalitionId=45'
     r = requests.get(url, allow_redirects=True)
-    open('generated/42badge.svg', 'wb').write(r.content)
+    if r.status_code == 200:
+        open('generated/42badge.svg', 'wb').write(r.content)
     
     with open("templates/42badge.svg", "r") as f:
         output = f.read()
