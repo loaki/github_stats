@@ -99,7 +99,8 @@ async def get_42badge() -> None:
     r = requests.get(url, allow_redirects=True)
     if r.status_code == 200:
         open('generated/42badge.svg', 'wb').write(r.content)
-    
+    '''
+    # Level 42 badge
     with open("templates/42badge.svg", "r") as f:
         output = f.read()
     lvl = 10.71
@@ -116,6 +117,7 @@ async def get_42badge() -> None:
     generate_output_folder()
     with open("generated/42level.svg", "w") as f:
         f.write(output)
+    '''
 
 ################################################################################
 # Main Function
