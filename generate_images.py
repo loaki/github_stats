@@ -90,35 +90,6 @@ fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8z"></path></svg>
     with open("generated/languages.svg", "w") as f:
         f.write(output)
 
-async def get_42badge() -> None:
-    """
-    get 42 badge from badge42.vercel.app 
-    generate 42 level svg
-    """
-    url = 'https://badge42.vercel.app/api/v2/cl3vp66tw002509l1p3inopdr/stats?cursusId=21&coalitionId=45'
-    r = requests.get(url, allow_redirects=True)
-    if r.status_code == 200:
-        open('generated/42badge.svg', 'wb').write(r.content)
-    '''
-    # Level 42 badge
-    with open("templates/42badge.svg", "r") as f:
-        output = f.read()
-    lvl = 10.71
-    delay_between = 150
-    color = "#4180db"
-    progress = (
-        f'<span style="background-color: {color};'
-        f'width: {lvl%1*100}%;" '
-        f'class="progress-item"></span>'
-    )
-    output = re.sub(r"{{ level }}", f'Level {int(lvl)} - {int(lvl%1*100)}%', output)
-    output = re.sub(r"{{ progress }}", progress, output)
-
-    generate_output_folder()
-    with open("generated/42level.svg", "w") as f:
-        f.write(output)
-    '''
-
 ################################################################################
 # Main Function
 ################################################################################
@@ -158,7 +129,7 @@ async def main() -> None:
             exclude_langs=excluded_langs,
             ignore_forked_repos=ignore_forked_repos,
         )
-        await asyncio.gather(generate_languages(s), generate_overview(s), get_42badge())
+        await asyncio.gather(generate_languages(s), generate_overview(s))
 
 
 if __name__ == "__main__":
